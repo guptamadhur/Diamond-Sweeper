@@ -6,11 +6,11 @@ import arrow from "../../../../../assets/arrow.png";
 import question from "../../../../../assets/question.png";
 import "./index.css";
 
-const getDirection = (diamondIndices, index, size) => {
-  var nearestIndex = diamondIndices.find(
+const getDirection = (diamondIndexes, index, size) => {
+  var nearestIndex = diamondIndexes.find(
     (item) => Math.floor(item / size) === Math.floor(index / size)
   );
-  var isSquareAbove = diamondIndices.find(
+  var isSquareAbove = diamondIndexes.find(
     (item) => Math.floor(item / size) < Math.floor(index / size)
   );
   if (nearestIndex > -1) {
@@ -38,17 +38,16 @@ const getImgURL = (value, lastClicked) => {
   }
 };
 
-const Square = (props) => {
-  const {
-    value,
-    index,
-    updateScore,
-    diamondIndices,
-    lastClicked,
-    opened,
-    boardSize,
-  } = props;
-  const direction = getDirection(diamondIndices, index, boardSize);
+const Square = ({
+  value,
+  index,
+  updateScore,
+  diamondIndexes,
+  lastClicked,
+  opened,
+  boardSize,
+}) => {
+  const direction = getDirection(diamondIndexes, index, boardSize);
   return (
     <li
       onClick={(e) => {

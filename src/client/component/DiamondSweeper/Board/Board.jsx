@@ -30,7 +30,7 @@ class Board extends React.Component {
     };
 
     // store Diamond Indices
-    this.diamondIndices = squares.reduce((acc, item, idx) => {
+    this.diamondIndexes = squares.reduce((acc, item, idx) => {
       if (item.value === DIAMOND) acc.push(idx);
       return acc;
     }, []);
@@ -101,13 +101,10 @@ class Board extends React.Component {
     window.location.reload();
   };
 
-  render() {
-    const { history, lastClicked } = this.state;
-    const current = history[this.state.stepNumber];
-    const squares = current.squares.slice();
+  getStepList = () => {
     let moves;
-    if (history.length > 1) {
-      moves = history.map((step, move) => {
+    if (this.state.history.length > 1) {
+      moves = this.state.history.map((step, move) => {
         const desc = move ? "Go to move #" + move : "Go to game start";
         return (
           <li key={move}>
@@ -116,6 +113,13 @@ class Board extends React.Component {
         );
       });
     }
+    return moves;
+  };
+
+  render() {
+    const { history, lastClicked } = this.state;
+    const current = history[this.state.stepNumber];
+    const squares = current.squares.slice();
 
     // calculate score based on unopened
     const score = squares.filter((s) => !s.opened).length;
@@ -126,32 +130,32 @@ class Board extends React.Component {
       this.props.BOARD_SIZE;
 
     // cal the nearest hidden diamond
-    const unopenedDiamondIndices = this.diamondIndices.filter(
+    const unopenedDiamondIndexes = this.diamondIndexes.filter(
       (idx) => !squares[idx].opened
     );
 
     return (
       <>
-        <h4 className="score">Score: {score}</h4>
-        <ul className="board">
-          {squares.map((square, index) => (
-            <Square
-              key={index}
-              boardSize={this.props.BOARD_SIZE}
-              value={square.value}
-              opened={square.opened}
-              updateScore={this.updateScore}
-              index={index}
-              diamondIndices={unopenedDiamondIndices}
-              lastClicked={lastClicked === index}
-            />
-          ))}
-        </ul>
+          <h4 className="score">Score: {score}</h4>
+          <ul className="board">
+            {squares.map((square, index) => (
+              <Square
+                key={index}
+                boardSize={this.props.BOARD_SIZE}
+                value={square.value}
+                opened={square.opened}
+                updateScore={this.updateScore}
+                index={index}
+                diamondIndexes={unopenedDiamondIndexes}
+                lastClicked={lastClicked === index}
+              />
+            ))}
+          </ul>
 
-        {this.loadButtons()}
-        <div className="status-info">
-          <ol>{moves}</ol>
-        </div>
+          {this.loadButtons()}
+          <div className="status-info">
+            <ol>{this.getStepList()}</ol>
+          </div>
         {isComplete && (
           <Modal
             heading="GAME OVER!"
