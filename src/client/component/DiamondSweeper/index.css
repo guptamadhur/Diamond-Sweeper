@@ -19,12 +19,12 @@ img {
 }
 
 button {
-  font-size: 1rem;
+  font-size: 0.875rem;
   border: 1px solid #222;
   display: inline-block;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 1rem 1.25rem;
+  padding: 1rem;
   margin: 1rem 1.25rem;
   transition: all 0.3s ease-out;
   cursor: pointer;

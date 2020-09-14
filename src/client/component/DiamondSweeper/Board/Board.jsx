@@ -45,7 +45,6 @@ class Board extends React.Component {
   // update score on square click
   updateScore = (index) => {
     //Creating a new copy of state then making changes
-
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
@@ -136,26 +135,26 @@ class Board extends React.Component {
 
     return (
       <>
-          <h4 className="score">Score: {score}</h4>
-          <ul className="board">
-            {squares.map((square, index) => (
-              <Square
-                key={index}
-                boardSize={this.props.BOARD_SIZE}
-                value={square.value}
-                opened={square.opened}
-                updateScore={this.updateScore}
-                index={index}
-                diamondIndexes={unopenedDiamondIndexes}
-                lastClicked={lastClicked === index}
-              />
-            ))}
-          </ul>
+        <h4 className="score">Score: {score}</h4>
+        <ul className="board">
+          {squares.map((square, index) => (
+            <Square
+              key={index}
+              boardSize={this.props.BOARD_SIZE}
+              value={square.value}
+              opened={square.opened}
+              updateScore={this.updateScore}
+              index={index}
+              diamondIndexes={unopenedDiamondIndexes}
+              lastClicked={lastClicked === index}
+            />
+          ))}
+        </ul>
 
-          {this.loadButtons()}
-          <div className="status-info">
-            <ol>{this.getStepList()}</ol>
-          </div>
+        {this.loadButtons()}
+        <div className="status-info">
+          <ol>{this.getStepList()}</ol>
+        </div>
         {isComplete && (
           <Modal
             heading="GAME OVER!"
