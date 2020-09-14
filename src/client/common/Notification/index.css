@@ -1,0 +1,25 @@
+.notification {
+    position: fixed;
+    top: 3.125rem;
+    right: 3.125rem;
+    padding: 1.25rem 2.5rem;
+    background: #27ae60;
+    color: #fff;
+    transition: all 0.4s ease-out;
+    z-index: 1;
+    opacity: 0;
+    transform: translate3d(400px, 0, 0);
+}
+
+.show.notification {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+@media only screen and (max-width: 800px) {
+    .notification {
+        top: 1.25rem;
+        right: 1.25rem;
+        padding: 0.625rem 1.25rem;
+    }
+}

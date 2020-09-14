@@ -1,69 +1,63 @@
-# Starter Kit for [Building Applications in React]
-## Get Started
+# Diamond Sweeper
 
-1. **Install [Node 8](https://nodejs.org)** or newer. Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm)
-2. **Navigate to this project's root directory on the command line.**
-3. **Install Node Packages.** - `npm install`
-4. **Install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)** in Chrome.
-5. Having issues? See below.
+### Install
+`npm install`
 
-## Having Issues? Try these things first:
+### Usage
+`npm start`
 
-1. Run `npm install` - If you forget to do this, you'll get an error when you try to start the app later.
-2. Don't run the project from a symbolic link. It will cause issues with file watches.
-3. Delete any .eslintrc in your user directory and disable any ESLint plugin / custom rules within your editor since these will conflict with the ESLint rules defined in the course.
-4. On Windows? Open your console as an administrator. This will assure the console has the necessary rights to perform installs.
-5. Ensure you do not have NODE_ENV=production in your env variables as it will not install the devDependencies. To check run this on the command line: `set NODE_ENV`. If it comes back as production, you need to clear this env variable.
-6. Nothing above work? Delete your node_modules folder and re-run npm install.
+# Diamond Sweeper
 
-### Production Dependencies
+## Problem Statement
 
-| **Dependency**   | **Use**                                              |
-| ---------------- | ---------------------------------------------------- |
-| bootstrap        | CSS Framework                                        |
-| immer            | Helper for working with immutable data               |
-| prop-types       | Declare types for props passed into React components |
-| react            | React library                                        |
-| react-dom        | React library for DOM rendering                      |
-| react-redux      | Connects React components to Redux                   |
-| react-router-dom | React library for routing                            |
-| react-toastify   | Display messages to the user                         |
-| redux            | Library for unidirectional data flows                |
-| redux-thunk      | Async redux library                                  |
-| reselect         | Memoize selectors for performance                    |
+The goal of this exercise is to build a game.
 
-### Development Dependencies
+The rules of the game are as follows:
 
-| **Dependency**                  | **Use**                                                          |
-| ------------------------------- | ---------------------------------------------------------------- |
-| @babel/core                     | Transpiles modern JavaScript so it runs cross-browser            |
-| babel-eslint                    | Lint modern JavaScript via ESLint                                |
-| babel-loader                    | Add Babel support to Webpack                                     |
-| babel-preset-react-app          | Babel preset for working in React. Used by create-react-app too. |
-| css-loader                      | Read CSS files via Webpack                                       |
-| cssnano                         | Minify CSS                                                       |
-| enzyme                          | Simplified JavaScript Testing utilities for React                |
-| enzyme-adapter-react-16         | Configure Enzyme to work with React 16                           |
-| eslint                          | Lints JavaScript                                                 |
-| eslint-loader                   | Run ESLint via Webpack                                           |
-| eslint-plugin-import            | Advanced linting of ES6 imports                                  |
-| eslint-plugin-react             | Adds additional React-related rules to ESLint                    |
-| fetch-mock                      | Mock fetch calls                                                 |
-| html-webpack-plugin             | Generate HTML file via webpack                                   |
-| http-server                     | Lightweight HTTP server to serve the production build locally    |
-| jest                            | Automated testing framework                                      |
-| json-server                     | Quickly create mock API that simulates create, update, delete    |
-| mini-css-extract-plugin         | Extract imported CSS to a separate file via Webpack              |
-| node-fetch                      | Make HTTP calls via fetch using Node - Used by fetch-mock        |
-| npm-run-all                     | Display results of multiple commands on single command line      |
-| postcss-loader                  | Post-process CSS via Webpack                                     |
-| react-test-renderer             | Render React components for testing                              |
-| react-testing-library           | Test React components                                            |
-| redux-immutable-state-invariant | Warn when Redux state is mutated                                 |
-| redux-mock-store                | Mock Redux store for testing                                     |
-| rimraf                          | Delete files and folders                                         |
-| style-loader                    | Insert imported CSS into app via Webpack                         |
-| webpack                         | Bundler with plugin ecosystem and integrated dev server          |
-| webpack-bundle-analyzer         | Generate report of what's in the app's production bundle         |
-| webpack-cli                     | Run Webpack via the command line                                 |
-| webpack-dev-server              | Serve app via Webpack                                            |
+* The game board has 8x8 squares (initially, all represented by question marks)
+* There are 8 diamonds hidden on the board, each diamond behind one of the squares
+* When the user clicks on a square
+    * If the square was hiding a diamond, the diamond appears
+    * Otherwise, the square is opened, and blank
+* The game ends when all diamonds are found. The user's score is the number of squares still left unturned.
+
+## Advanced: Adding Hints
+
+Part II of this problem adds the ability to add hints to empty squares
+
+* When the user clicks on a square
+    * If the square was not a diamond, then an arrow appears, pointing towards the nearest diamond
+    * Any arrows that were previously show become hidden
+
+## Starter App
+
+Provided is a simple application which can be used as a starter kit. It contains a simple UI for the above problem. Feel free to add any libraries or frameworks that you believe can help. Unit tests for any logic that the application contains is a bonus.
+
+Requirements:
+
+* node.js (the app was built against v8.1.4, but any node > 6 should work)
+* npm
+
+To start the Application:
+
+* Install the dependencies (via `yarn install` or `npm install`)
+* Compile Assets: `npm run compile`
+* Start the webserver: `npm start`
+* Visit `http://localhost:3000` to see the application
+
+If you have done the above steps correctly, you should see the below
+
+![Screenshot](./src/assets/Diamond-Sweeper.jpg)
+
+If you make a change, run the last two steps above to see it reflected.
+
+## Bonus Sections
+
+You may also choose to try some of the bonus parts of this problem:
+
+1. (UI) - Improve the board to semantic html. The default HTML provided uses tables.
+2. (UI) - Make the UI responsive.
+3. (Javascript) - Support the ability to save your progress, and load your last save.
+4. (Javascript) - Cover logic in your application with meaningful tests
+5. (Infra) - Get hot reloading working
+6. (Infra) - Get asset pipelining and minification working

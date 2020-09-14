@@ -1,0 +1,37 @@
+.flip-square {
+    perspective: 1000px;
+}
+
+.flip-square.open .swap-holder {
+    transform: rotateY(180deg);
+}
+
+.swap-holder {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.swap,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.left.back {
+    transform: rotateZ(180deg) rotateY(180deg);
+}
+
+.top.back {
+    transform: rotateZ(90deg) rotateY(180deg);
+}
+
+.bottom.back {
+    transform: rotateZ(270deg) rotateY(180deg);
+}

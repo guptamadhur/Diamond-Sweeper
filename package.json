@@ -1,12 +1,12 @@
 {
-  "name": "react-boiler-plate",
+  "name": "diamond-sweeper",
   "version": "0.1.0",
   "private": true,
   "author": "Madhur Gupta",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/guptamadhur/React-Boiler-Plate.git"
+    "url": "https://github.com/guptamadhur/Diamond-Sweeper.git"
   },
   "dependencies": {
     "prop-types": "^15.7.2",

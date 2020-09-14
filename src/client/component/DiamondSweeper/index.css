@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  font-size: 1rem;
+  border: 1px solid #222;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 1.25rem;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  outline: 0;
+  background: #fff;
+}
+
+button:hover {
+  color: #fff;
+  background-color: #222;
+}
+
+.diamond-sweeper-container {
+  text-align: center;
+  font-family: Arial;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.diamond-sweeper-container h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.diamond-sweeper-container p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .diamond-sweeper-container {
+    max-width: 95vw;
+    padding: 1.5rem;
+  }
+}

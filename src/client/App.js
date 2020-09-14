@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
+import DiamondSweeper from "./component/DiamondSweeper";
 
 const App = () => {
-  return (
-    <div>
-      Learn React with Us!
-    </div>
-  );
-}
-
+  return <DiamondSweeper />;
+};
 export default App;
