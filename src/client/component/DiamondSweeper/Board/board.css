@@ -8,7 +8,9 @@
     letter-spacing: 1px;
 }
 
-.status-info {}
+.status-info {
+    margin-bottom: 4rem;
+}
 
 .status-info ol {
     max-height: 400px;
@@ -61,6 +63,7 @@
 
     .status-info ol {
         flex-direction: row;
+        max-height: unset;
     }
 
     .status-info li {
