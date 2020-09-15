@@ -34,7 +34,7 @@ const getImgURL = (value, lastClicked) => {
       if (lastClicked) {
         return arrow;
       }
-      return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==";
+      return;
   }
 };
 
@@ -59,9 +59,9 @@ const Square = ({
       className={opened ? "flip-square open" : "flip-square"}
     >
       <div className="swap-holder">
-        {!opened || QUESTION === DIAMOND ? (
+        {!opened ? (
           <img alt={QUESTION} className="swap" src={getImgURL(QUESTION)} />
-        ) : (
+        ) : lastClicked || value === DIAMOND ? (
           <img
             alt={value}
             className={
@@ -69,7 +69,7 @@ const Square = ({
             }
             src={getImgURL(value, lastClicked)}
           />
-        )}
+        ) : null}
       </div>
     </li>
   );
