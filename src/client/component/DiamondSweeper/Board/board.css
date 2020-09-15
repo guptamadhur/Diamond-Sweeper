@@ -13,9 +13,7 @@
 .status-info ol {
     max-height: 400px;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    max-width: 80vw;
+    flex-flow: column wrap;
     justify-content: space-between;
 }
 
@@ -51,6 +49,10 @@
 }
 
 @media only screen and (max-width: 800px) {
+    .board {
+        width: auto;
+    }
+
     .board li {
         flex: 1 1 12.5%;
         height: 0;
