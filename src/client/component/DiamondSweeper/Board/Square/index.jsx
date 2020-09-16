@@ -1,5 +1,4 @@
 import React from "react";
-
 import { DIAMOND, QUESTION } from "../../constants";
 import diamond from "../../../../../assets/diamond.png";
 import arrow from "../../../../../assets/arrow.png";
