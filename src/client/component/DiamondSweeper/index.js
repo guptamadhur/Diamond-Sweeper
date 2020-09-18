@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import Board from "./Board/Board";
+import Board from "./Board";
 import { SUMMARY } from "./constants";
 
 const DiamondSweeper = () => {

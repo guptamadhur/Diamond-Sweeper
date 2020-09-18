@@ -55,8 +55,7 @@ const Square = ({
         }
         updateScore(index);
       }}
-      className={opened ? "flip-square open" : "flip-square"}
-    >
+      className={opened ? "flip-square open" : "flip-square"}>
       <div className="swap-holder">
         {!opened ? (
           <img alt={QUESTION} className="swap" src={getImgURL(QUESTION)} />
