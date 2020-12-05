@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Diamond-Sweeper/static/css/main.cad1c058.chunk.css",
+    "main.js": "/Diamond-Sweeper/static/js/main.accaaa82.chunk.js",
+    "main.js.map": "/Diamond-Sweeper/static/js/main.accaaa82.chunk.js.map",
+    "runtime-main.js": "/Diamond-Sweeper/static/js/runtime-main.6f5274c2.js",
+    "runtime-main.js.map": "/Diamond-Sweeper/static/js/runtime-main.6f5274c2.js.map",
+    "static/js/2.8dfe8bdb.chunk.js": "/Diamond-Sweeper/static/js/2.8dfe8bdb.chunk.js",
+    "static/js/2.8dfe8bdb.chunk.js.map": "/Diamond-Sweeper/static/js/2.8dfe8bdb.chunk.js.map",
+    "index.html": "/Diamond-Sweeper/index.html",
+    "precache-manifest.b6cfd0bbcd0e43140f94a826f8e2ffad.js": "/Diamond-Sweeper/precache-manifest.b6cfd0bbcd0e43140f94a826f8e2ffad.js",
+    "service-worker.js": "/Diamond-Sweeper/service-worker.js",
+    "static/css/main.cad1c058.chunk.css.map": "/Diamond-Sweeper/static/css/main.cad1c058.chunk.css.map",
+    "static/js/2.8dfe8bdb.chunk.js.LICENSE.txt": "/Diamond-Sweeper/static/js/2.8dfe8bdb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6f5274c2.js",
+    "static/js/2.8dfe8bdb.chunk.js",
+    "static/css/main.cad1c058.chunk.css",
+    "static/js/main.accaaa82.chunk.js"
+  ]
+}
